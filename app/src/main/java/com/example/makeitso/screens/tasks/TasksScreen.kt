@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.makeitso.R.drawable as AppIcon
 import com.example.makeitso.R.string as AppText
 import com.example.makeitso.common.composable.ActionToolbar
@@ -51,6 +52,10 @@ fun TasksScreen(
   )
 
   LaunchedEffect(viewModel) { viewModel.loadTaskOptions() }
+  val tasks = viewModel
+    .tasks
+    .collectAsStateWithLifecycle(emptyList())
+
 }
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
