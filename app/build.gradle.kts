@@ -80,7 +80,7 @@ dependencies {
     implementation("androidx.test:runner:1.6.2")
     ksp("com.google.dagger:hilt-compiler:2.47")
 
-    //Firebase
+    //Firebase depencencias
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
